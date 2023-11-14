@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+// Reset the body of page
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    cursor: none!important;
+}
+
+body {
+    background: linear-gradient(rgb(14,17,36), rgb(36,26,73));
+    overflow-x: hidden;
+}
+
+// Using for the all of container in file ".component.scss"
+.edit-overall {
+    margin-top: 140px!important;
+}
+
+:root {
+    // Using for the products.component.scss & new-arrivals.component.scss
+    --clr-neon: hsl(317 100% 54%);
+    --clr-neon-green: hsl(134, 100%, 54%);
+    --clr-neon-orange: hsl(34, 100%, 54%);
+    --clr-bg: hsl(323 21% 16%);
+    
+    // Using for the admin-panel.component.scss
+    --timing: 400ms;
+    --rotation: 20deg;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+/* Importing Datepicker SCSS file. */
+@import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
+
+
+.carousel-control-next-icon {
+    color: black;
+}

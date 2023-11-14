@@ -1,0 +1,233 @@
+<app-header></app-header>
+
+<div class="section twinkle">
+    <div class="item-1 item">
+        <div class="animation-img">
+            <div class="card-content">
+                <!-- <img class="logo" src="./assets/images/nike_title.jpg" alt=""> -->
+                <img class="front-image" src="./assets/images/nike_character.png" alt="">
+                <img class="bg-image" src="./assets/images/nike_cover.jpg" alt="">
+            </div>
+        </div>
+    </div> 
+
+    <div class="item-2 item">
+        <!-- Three function include: hide button controls, auto slide and custom interval -->
+        <app-carousel [images]="imagesnicexu" [controls]="false" [autoSlide]="true" [slideInterval]="5000"></app-carousel>   
+    </div>
+
+    <div class="item-3 item">
+        <!-- This is the content of image slider shoes -->
+    <div class="product-shoes">
+        <div class="container-fluid">
+        <div class="slider-wrap">
+            <div class="slider-main">
+                <!-- <div class="item">
+                    <div class="content">
+                        <div class="text">
+                            <i class="fa-solid fa-person-running"></i>
+                        </div>
+                        <p>Running</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="content">
+                        <div class="text">
+                            <i class="fa-solid fa-dumbbell"></i>
+                        </div>
+                        <p>Training & Gym</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="content">
+                        <div class="text">
+                            <i class="fa-solid fa-basketball"></i>
+                        </div>
+                        <p>Basketball</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="content">
+                        <div class="text">
+                            <i class="fa-solid fa-baseball"></i>
+                        </div>
+                        <p>Baseball</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="content">
+                        <div class="text">
+                            <i class="fa-regular fa-futbol"></i>
+                        </div>
+                        <p>Football</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="content">
+                        <div class="text">
+                            <i class="fa-solid fa-person-walking"></i>
+                        </div>
+                        <p>Walking</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="content">
+                        <div class="text">
+                            <i class="fa-solid fa-person-running"></i>
+                        </div>
+                        <p>Dancing</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="content">
+                        <div class="text">
+                            <i class="fa-solid fa-football"></i>
+                        </div>
+                        <p>American football</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="content">
+                        <div class="text">
+                            <i class="fas fa-tennis"></i>
+                        </div>
+                        <p>Tennis</p>
+                    </div>
+                </div> -->
+                <div class="item" *ngFor="let category of categories">
+                    <div class="content">
+                        <div class="text">
+                            <i class="fa-solid fa-person-running" *ngIf="category.name === 'Running'"></i>
+                            <i class="fa-solid fa-dumbbell" *ngIf="category.name === 'Training & Gym'"></i>
+                            <i class="fa-solid fa-basketball" *ngIf="category.name === 'Basketball'"></i>
+                            <i class="fa-solid fa-baseball" *ngIf="category.name === 'Baseball'"></i>
+                            <i class="fa-regular fa-futbol" *ngIf="category.name === 'Football'"></i>
+                            <i class="fa-solid fa-person-walking" *ngIf="category.name === 'Walking'"></i>
+                            <i class="fa-solid fa-football" *ngIf="category.name === 'American Football'"></i>
+                            <i class="fa-solid fa-child-reaching" *ngIf="category.name === 'Yoga'"></i>
+                            <i class="fa-solid fa-table-tennis-paddle-ball" *ngIf="category.name === 'Tennis'"></i>
+                            <i class="fa-solid fa-children" *ngIf="category.name === 'Dancing'"></i>
+                    </div>
+                    <p>{{category.name}}</p>
+                    </div>
+                </div>                  
+            </div>
+            <div class="button-area">
+            <h4>Category</h4>
+                <button type="button" class="prev" appPrev>
+                    <i class="fa-solid fa-angle-left"></i>
+                </button>
+                <button 
+                type="button" class="next" appNext>
+                    <i class="fa-solid fa-angle-right"></i>
+                </button>
+            </div>
+        </div>
+        </div>
+    </div>  
+    </div>
+
+
+    <div class="item-4 item">
+        <!-- This is the content of image slider shoes -->
+    <div class="product-shoes">
+        <div class="container-fluid">
+        <div class="slider-wrap">
+            <div class="slider-main">
+            <div class="item" *ngFor="let product of newProducts">
+                <div class="text" (click)="onProductClick(product.id)">
+                    <img src="{{product.thumbnail}}" alt="">
+                    <h5 class="product-description">{{product.name}} </h5>
+                    <div class="small-content">
+                        <div class="money"><i class="fa-solid fa-dollar-sign"></i>{{product.price}}</div>
+                        <div class="heart"><i class="fa-solid fa-heart" style="color:#f97b16"></i>456k</div>
+                        <div class="percent"><i class="fa-solid fa-percent" style="color:#f97b16"></i>5,653</div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="button-area">
+            <h4>Our favourite new shoes</h4>
+                <button type="button" class="prev" appPrev><i class="fa-solid fa-angle-left"></i></button>
+                <button type="button" class="next" appNext><i class="fa-solid fa-angle-right"></i></button>
+            </div>
+        </div>
+        </div>
+    </div>  
+    </div>
+
+    <div class="item-5 item">
+        <div class="top">
+            <h4>Best Sellers</h4>
+            <a routerLink="/best-sellers" routerLinkActive="active">View all<i class="fa-solid fa-right-from-bracket"></i></a>
+        </div>
+        <div class="bottom">
+            <div class="section" *ngFor="let product of bestSellers">
+                <div class="left" (click)="onProductClick(product.id)"><img src="{{product.thumbnail}}" alt=""></div>
+                <div class="right">
+                    <h5 class="product-description">{{product.name}}</h5>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <div class="price">${{product.price}}</div>
+                    <button (click)="onProductClick(product.id)">Order</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="item-6 item">
+        <a class="filter-button">Hover<i class="fa-solid fa-circle-arrow-down"></i></a>
+        <div class="animation-img">
+            <div class="card-content">
+                <!-- <img class="logo" src="./assets/images/dark_rider-title.png" alt=""> -->
+                <img class="front-image" src="./assets/images/adidas_character.png" alt="">
+                <img class="bg-image" src="./assets/images/adidas_cover.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="item-7 item">
+        <div class="animation-img">
+            <div class="card-content">
+                <!-- <img class="logo" src="./assets/images/force_mage-title.png" alt=""> -->
+                <img class="front-image" src="./assets/images/puma_character.png" alt="">
+                <img class="bg-image" src="./assets/images/puma_cover.jpg" alt="">
+            </div>
+        </div>
+    </div> 
+
+    <div class="item-8 item">
+        <a class="filter-button">Enjoy your time to shopping</a>
+    </div>
+
+    <div class="item-9 item">
+        <a class="filter-button">Hover on images
+            <i class="fa-solid fa-circle-arrow-up"></i>
+            <i class="fa-solid fa-circle-arrow-down"></i>
+        </a>
+        <div class="animation-img">
+            <div class="card-content">
+                <!-- <img class="logo" src="./assets/images/nike_title.gif" alt=""> -->
+                <img class="front-image" src="./assets/images/converse_character.png" alt="">
+                <img class="bg-image" src="./assets/images/converse_cover.jpg" alt="">
+            </div>
+        </div>
+    </div> 
+
+    <div class="item-10 item">
+        <div class="animation-img">
+            <div class="card-content">
+                <!-- <img class="logo" src="./assets/images/vans_title.jpg" alt=""> -->
+                <img class="front-image" src="./assets/images/vans_character.png" alt="">
+                <img class="bg-image" src="./assets/images/vans_cover.jpg" alt="">
+            </div>
+        </div>
+    </div> 
+</div>
+<app-footer></app-footer>
+
+

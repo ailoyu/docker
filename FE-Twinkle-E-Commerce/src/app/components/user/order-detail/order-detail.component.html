@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="confirmation-container edit-overall twinkle ">
+        <h1>Thank you for your successful order and payment!</h1>
+        <p>Below are detailed information about your order</p>
+        <p>In addition, detailed information about your order will be sent via email!</p>
+        <p>Please check your email for more details <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank">Click here!</a ></p>
+    </div>
+    <div class="row twinkle">
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col" class="text-start">Shoes</th>
+                    <th scope="col">Size</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Subtotal</th>
+                  </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let item of cartItems">
+                <tr>
+                    <td>
+                        <div class="product-info">
+                            <img 
+                            [src]="item.product.thumbnail"
+                            alt="Product Image" class="product-image">
+                            <span class="product-name">{{ item.product.name }}</span>
+                        </div>
+                    </td>
+                    <td>{{ item.size }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>${{ item.product.price | number:'1.2-2'   }}</td>
+                    <td>${{ (item.product.price * item.quantity) | number:'1.2-2'   }}</td>
+                </tr>
+            </ng-container>
+                
+            </tbody>
+        </table>   
+        <div class="text-start mt-3">
+            <h4 class="header-text text-end ">Total: ${{ totalAmount | number:'1.2-2'  }}</h4>
+        </div>
+        <div class="text-center mt-3">
+            <button class="btn btn-gradient" type="button" (click)="returnHomePage()">Continue shopping</button>
+        </div> 
+    </div>    
+</div>
+<app-footer></app-footer>

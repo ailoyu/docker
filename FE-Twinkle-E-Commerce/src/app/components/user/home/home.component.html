@@ -1,0 +1,170 @@
+<app-header></app-header>
+<app-animation-loading-page *ngIf="loadingService.loading$ | async"></app-animation-loading-page>
+
+<div class="section edit-overall twinkle">
+  <div class="intro-section">
+    <h1>Twinkle</h1>
+    <p>Shopping and life</p>
+  </div>
+  <!-- This is the top video-ads -->
+  <div class="top">
+    <div class="banner-video-ads">
+      <a routerLink="/products" routerLinkActive="active">
+        <video src="https://res.cloudinary.com/dxctlgwec/video/upload/v1698678452/pfyatkw1ynidracek5cc.mp4" [muted]="'muted'" loop autoplay></video>
+      </a>
+      <h1>RUN YOUR RUN</h1><br>
+      <p>Follow the feeling that keeps your running best in the city.</p><br>
+      <div class="button">
+        <div class="button-left"><a routerLink="/login" routerLinkActive="active"><button>Sign in</button></a></div>
+        <div class="button-right"><a routerLink="/register" routerLinkActive="active"><button>Sign up</button></a></div>
+      </div>
+    </div>
+  </div>
+
+  <span>Gear Up</span>
+  <!-- This is the content Gear Up -->
+  <div class="first">
+    <div class="list">
+      <!-- <h3>Gear up</h3> -->
+        <div class="list-item">
+          <a routerLink="/detail-product/7" routerLinkActive="active">
+          <img src="./assets/images/shoes-left.jpg" alt="">
+          <div class="content">
+            <h3>All the Cushion. All the Feels</h3>
+            <button>Shop Invincible</button>
+          </div>
+        </a>
+        </div>
+        <div class="list-item">
+          <a routerLink="/detail-product/21" routerLinkActive="active">
+          <img src="./assets/images/shoes-center.jpg" alt="">
+          <div class="content">
+            <h3>Give Your Feet a Hug</h3>
+            <button>Shop Infinity</button>
+          </div>
+        </a>
+        </div>
+        <div class="list-item">
+          <a routerLink="/detail-product/5" routerLinkActive="active">
+          <img src="./assets/images/shoes-right.webp" alt="">
+          <div class="content">
+            <h3>A Spring Ride for Every Run</h3>
+            <button>Shop Pegasus</button>
+          </div>
+        </a>
+
+        </div>
+    </div>
+  </div>
+
+  
+  
+  <!-- This is the middle video-ads -->
+  <div class="middle">
+    <div class="banner-video-ads">
+      <h3>Trending</h3>
+      <a routerLink="/detail-product/6" routerLinkActive="active">
+        <video src="https://res.cloudinary.com/dxctlgwec/video/upload/v1698678372/p9qsdq4knrwkmuvowfzu.mp4" [muted]="'muted'" loop autoplay></video>
+      </a>
+      <h1>TUNED FOR TOUCH</h1><br>
+      <p>Make every touch a masterpiece like Jamala Musiala with the Tiempo 10.</p><br>
+      <a routerLink="/products" routerLinkActive="active"><button>Shop</button></a>
+    </div>
+  </div>
+
+  <span>Just In</span>
+  <!-- This is the content  Just In -->
+  <div class="second">
+    <div class="list">
+      <!-- <h3>Gear up</h3> -->
+      <div class="list-item">
+        <a routerLink="/detail-product/22" routerLinkActive="active">
+        <img src="./assets/images/model-1.jpg" alt="">
+        <div class="content">
+          <p>Own the Floor</p>
+          <h3>Sneakers that Shine Beyond the Studio</h3>
+          <button>Shop Now</button>
+        </div>
+      </a>
+      </div>
+      <div class="list-item">
+        <a routerLink="/detail-product/25" routerLinkActive="active">
+        <img src="./assets/images/model-2.jpg" alt="">
+        <div class="content">
+          <p class="p-right">Make Your Move</p>
+          <h3 class="h3-right">Say Hello to the Paris Dunk Low</h3>
+          <button class="button-right">Shop</button>
+        </div>
+      </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- <span>Featured</span>
+  <div class="third">
+    <div class="list">
+      
+        <div class="list-item">
+          <img src="./assets/images/model-3.png" alt="">alt="">
+          <div class="content">
+            <p class="p-left">Nike Full Force Low</p>
+            <h3 class="h3-left">Throw Them On and Go Full Force</h3>
+            <button class="button-left">Shop</button>
+          </div>
+        </div>
+        <div class="list-item">
+          <img src="./assets/images/model-4.png" alt="">alt="">
+          <div class="content">
+            <p>Nike Phoenix Waffle</p>
+            <h3>All-day Comfort Meets All-day Style</h3>
+            <button>Shop</button>
+          </div>
+        </div>
+    </div>
+  </div> -->
+  
+
+
+  <!-- This is the bottom video-ads -->
+  <div class="bottom">
+    <div class="banner-video-ads">
+      <h3>Best Seller</h3>
+      <a routerLink="/best-sellers" routerLinkActive="active">
+      <video src="https://res.cloudinary.com/dxctlgwec/video/upload/v1698678304/giqcojfgpr7tm5oywvqd.mp4"  [muted]="'muted'" loop autoplay></video>
+      </a>
+      <p>Nike Vomeo 17</p>
+      <h1>INCREDIBLY SOFT,BOLDLY RESPONSIVE</h1><br>
+      <p>Set off on your next run with snap in your step and cushion underfoot.</p><br>
+      <a routerLink="/about-us" routerLinkActive="active"><button>About us</button></a>
+    </div>
+  </div>
+
+  
+  <span>Gender Equality and Children's Rights</span>
+  <!-- This is the content "The Essentials" -->
+  <div class="fourth">
+    <div class="list">
+      <div class="list-item">
+        <img src="./assets/images/model-3.png" alt="">
+        <div class="content">
+          <button>Men's</button>
+        </div>
+        </div>
+        <div class="list-item">
+          <img src="./assets/images/model-4.png" alt="">
+          <div class="content">
+            <button>Women's</button>
+          </div>
+        </div>
+        <div class="list-item">
+          <img src="./assets/images/model-5.png" alt="">
+          <div class="content">
+            <button>Kid's</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<app-footer></app-footer>
+  
+  

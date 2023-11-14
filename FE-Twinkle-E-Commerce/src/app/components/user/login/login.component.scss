@@ -1,0 +1,364 @@
+.section {
+    margin: 0px 0px;
+    height: 100%;
+    width: 100%;
+    color: white;
+}
+
+.wrapper {
+    height: 102vh;
+    width: 100%;
+    background: linear-gradient(180deg, #04fafd 5%, #119dff 50%, #030423);
+    position: absolute;
+}
+
+.wrapper div {
+    height: 60px;
+    width: 60px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50px;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    animation: 4s linear infinite;
+}
+
+div .dot {
+    height: 10px;
+    width: 10px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 20%;
+    right: 20%;
+}
+
+.wrapper div:nth-child(1) {
+    top: 20%;
+    left: 20%;
+    animation: animate-bubbels 8s linear infinite;
+}
+
+.wrapper div:nth-child(2) {
+    top: 60%;
+    left: 80%;
+    animation: animate-bubbels 10s linear infinite;
+}
+
+.wrapper div:nth-child(3) {
+    top: 40%;
+    left: 40%;
+    animation: animate-bubbels 8s linear infinite;
+}
+
+.wrapper div:nth-child(4) {
+    top: 66%;
+    left: 30%;
+    animation: animate-bubbels 7s linear infinite;
+}
+
+.wrapper div:nth-child(5) {
+    top: 90%;
+    left: 10%;
+    animation: animate-bubbels 9s linear infinite;
+}
+
+.wrapper div:nth-child(6) {
+    top: 30%;
+    left: 60%;
+    animation: animate-bubbels 5s linear infinite;
+}
+
+.wrapper div:nth-child(7) {
+    top: 70%;
+    left: 20%;
+    animation: animate-bubbels 8s linear infinite;
+}
+
+.wrapper div:nth-child(8) {
+    top: 75%;
+    left: 60%;
+    animation: animate-bubbels 10s linear infinite;
+}
+
+.wrapper div:nth-child(9) {
+    top: 50%;
+    left: 50%;
+    animation: animate-bubbels 6s linear infinite;
+}
+
+.wrapper div:nth-child(10) {
+    top: 45%;
+    left: 20%;
+    animation: animate-bubbels 10s linear infinite;
+}
+
+.wrapper div:nth-child(11) {
+    top: 10%;
+    left: 90%;
+    animation: animate-bubbels 9s linear infinite;
+}
+
+.wrapper div:nth-child(12) {
+    top: 20%;
+    left: 70%;
+    animation: animate-bubbels 7s linear infinite;
+}
+
+.wrapper div:nth-child(13) {
+    top: 20%;
+    left: 20%;
+    animation: animate-bubbels 8s linear infinite;
+}
+
+.wrapper div:nth-child(14) {
+    top: 60%;
+    left: 5%;
+    animation: animate-bubbels 6s linear infinite;
+}
+
+.wrapper div:nth-child(15) {
+    top: 90%;
+    left: 80%;
+    animation: animate-bubbels 9s linear infinite;
+}
+
+@keyframes animate-bubbels
+{
+    0%
+    {
+    transform: scale(0) translateY(0) rotate(0deg);
+    }
+    100%
+    {
+    transform: scale(1.3) translateY(-100px) rotate(360deg);
+    }
+}
+
+.row {
+    position: relative;
+    z-index: 2;
+    margin: 0px 0px;
+}
+
+.col-md-6 {
+    margin-top: 120px;
+}
+
+.login-form {
+    background-color: rgb(12, 12, 55);
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 500px;
+    border: 1px solid rgb(32, 34, 60);
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.login-header {
+    text-align: center;
+    color: rgb(105, 244, 181);
+    margin-bottom: 20px;
+}
+
+.login-header h2 {
+    font-family: 'Black Ops One', cursive;
+}
+
+.form-group label {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+.form-control:focus {
+    color: white;
+    background-color: transparent;
+    outline: none;
+    border-color: transparent;    
+}
+
+.divider-nospace {
+    border-top: 1px solid white;
+}
+
+.text-center span {
+    margin-right: 110px;
+}
+
+.password-field {
+    position: relative;
+}
+.password-toggle {
+    position: absolute;
+    top: 74%;
+    right: 10px;
+    transform: translateY(-50%);
+    // color: rgb(105, 244, 181);
+    color: orange;
+    cursor: pointer;
+}
+
+.checkbox-text {
+    color: rgb(243, 165, 42);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+/* Màu checkbox khi được chọn */
+.checkbox-text input[type="checkbox"]:checked {
+    border-color: white;
+    background-color: rgb(233, 66, 178);
+}
+
+.form-check-input {
+    margin-right: 5px;
+}
+
+.register-link {
+    color: rgb(105, 244, 181);
+    text-decoration: none;
+}
+
+.access-right {
+    margin-top: 20px;
+    width: 180px;
+    color: white;
+    border: 1px solid rgb(225, 64, 180);
+    font-size: 18px;
+}
+
+.access-right .default  {
+    color: black;
+    font-size: 18px;
+}
+
+.access-right .choice {
+    color: blue;
+    font-weight: bold;
+    font-size: 16px;
+
+}
+
+.access-right:focus {
+    border: 2px solid rgb(225, 64, 180);
+}
+
+.form-control::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgba(243, 165, 42, 0.4);
+    opacity: 1;
+    /* Firefox */
+    font-size: 16px;
+}
+
+.form-control:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: rgba(243, 165, 42, 0.4);
+}
+
+.form-control::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: rgba(243, 165, 42, 0.4);
+}
+
+.login-button {
+    background: linear-gradient(to right, rgb(225, 64, 180), rgb(126, 43, 237));
+    color: white;
+    border-radius: 30px;
+    width: 100%;
+    padding: 10px 0;
+    margin-top: 20px;
+    border: none;
+}
+.divider {
+    height: 1px;
+    background-color: rgb(243, 165, 42);
+    /* background-color: rgb(105, 244, 181) */
+    margin: 20px;
+}
+
+
+.loading-circle {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    border-top-color: #333;
+    animation: spin 1s infinite linear;
+    margin-left: 8px;
+}
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .twinkle{
+    animation: slide-in 0.5s ease-in-out, fade-in 0.5s ease-in-out;
+}
+@keyframes slide-in {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+// Responsive
+// Mobile & tablet: width < 1024px
+@media only screen and (max-width: 63.9375em) {
+
+}
+
+// Mobile: width < 768px
+@media only screen and (max-width: 46.1875em) {
+    .container {
+        height: 86vh;
+        margin-top: 40px;
+        width: 96%;
+        margin-right: 2%;
+    }
+
+    .form-group select option {
+        width: 100%;
+        
+    }
+}
+
+// Table: width >= 768px and width < 1024px
+@media screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+    .container {
+        margin-top: 40px;
+    }
+    
+    .col-md-6 {
+        width: 90%;
+    }
+
+    .offset-md-3 {
+        margin-left: 5%;
+    }
+}

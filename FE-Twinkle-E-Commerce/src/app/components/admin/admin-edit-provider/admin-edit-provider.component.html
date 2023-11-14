@@ -1,0 +1,107 @@
+<app-header></app-header>
+
+
+<div class="edit-overall">
+<div class="dashboard">
+  <app-admin-dashboard></app-admin-dashboard>
+  
+  <div class="admin-products twinkle" style="margin-top: 100px;">
+    <form [formGroup]="productForm">
+      <h1>Chỉnh sửa nhà cung cấp</h1>
+        <div class="form-group">
+          <label for="name">Tên nhà cung cấp:</label>
+          <input type="text" id="productName" name="productName" 
+          required
+          formControlName="name" 
+          [class.is-invalid]="productForm.get('name')!.invalid && productForm.get('name')!.touched">
+          <div 
+          *ngIf="productForm.get('name')!.invalid && productForm.get('name')!.touched" 
+          class="invalid-feedback">
+          Vui lòng nhập tên nhà cung cấp
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="name">Số điện thoại của nhà cung cấp:</label>
+          <input type="text" id="productName" name="productName" 
+          required
+          formControlName="phoneNumber" 
+          [class.is-invalid]="productForm.get('phoneNumber')!.invalid && productForm.get('phoneNumber')!.touched">
+          <div 
+          *ngIf="productForm.get('phoneNumber')!.invalid && productForm.get('phoneNumber')!.touched" 
+          class="invalid-feedback">
+          Vui lòng nhập số điện thoại của nhà cung cấp
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="name">Email:</label>
+          <input type="text" id="productName" name="productName" 
+          required
+          formControlName="email" 
+          [class.is-invalid]="productForm.get('email')!.invalid && productForm.get('email')!.touched">
+          <div 
+          *ngIf="productForm.get('email')!.invalid && productForm.get('email')!.touched" 
+          class="invalid-feedback">
+          Vui lòng nhập email của nhà cung cấp!
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="name">Địa chỉ:</label>
+          <input type="text" id="productName" name="productName" 
+          required
+          formControlName="address" 
+          [class.is-invalid]="productForm.get('address')!.invalid && productForm.get('address')!.touched">
+          <div 
+          *ngIf="productForm.get('address')!.invalid && productForm.get('address')!.touched" 
+          class="invalid-feedback">
+          Vui lòng nhập địa chỉ của nhà cung cấp!
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="name">Website:</label>
+          <input type="text" id="productName" name="productName" 
+          required
+          formControlName="website" 
+          [class.is-invalid]="productForm.get('website')!.invalid && productForm.get('website')!.touched">
+          <div 
+          *ngIf="productForm.get('website')!.invalid && productForm.get('website')!.touched" 
+          class="invalid-feedback">
+          Vui lòng nhập website của nhà cung cấp!
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="description">Mô tả:</label>
+          <input type="text" id="description" name="description" required
+          formControlName="description" 
+          [class.is-invalid]="productForm.get('description')!.invalid && productForm.get('description')!.touched">
+          <div 
+          *ngIf="productForm.get('description')!.invalid && productForm.get('description')!.touched" 
+          class="invalid-feedback">
+          Vui lòng nhập mô tả!
+          </div>
+        </div>                     
+                  
+
+        <div class="mt-5"></div>
+                 
+        <button *ngIf="this.providerId === 0" 
+        type="button" 
+        (click)="saveProduct()"
+        [disabled]="isLoading"
+        class="login-button">Lưu nhà cung cấp
+          <div *ngIf="isLoading" class="loading-circle"></div>
+        </button>
+      
+        <button *ngIf="this.providerId !== 0" 
+                type="button" 
+                (click)="updateProduct()"
+                [disabled]="isLoading"
+                class="login-button">Cập nhật nhà cung cấp
+          <div *ngIf="isLoading" class="loading-circle"></div>
+        </button>
+
+        <div class="divider"></div>
+    </form>
+  </div>
+</div>
+</div>
+<app-footer></app-footer>

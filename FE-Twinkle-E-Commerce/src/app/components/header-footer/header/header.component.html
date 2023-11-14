@@ -1,0 +1,93 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark" [ngClass]="navbarfixed?'fixed':'nofixed'">
+    <section class="button-animation">
+      <div class="block glow" routerLink="/new-arrivals" routerLinkActive="active">
+        New Arrivals
+      </div>
+    </section>
+    <div class="container">
+      <div>
+        <a class="navbar-brand" routerLink="/" routerLinkActive="active">
+            Twinkle
+        </a>
+      </div>
+      <button class="navbar-toggler custom-toggler" type="button" (click)="toggleMenu()" >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" [ngClass]="{'show': showMenu}">
+      <ul class="navbar-nav">
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/home" routerLinkActive="active">
+                <i class="fas fa-home icon"></i>
+                Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/best-sellers" routerLinkActive="active">
+                <i class="fas fa-star icon"></i> 
+                Best Seller
+            </a>
+        </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/products" routerLinkActive="active">
+                <i class="fas fa-tags icon"></i>
+                Product</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/order" routerLinkActive="active">
+                  <i class="fas fa-shopping-cart icon"></i>
+                  Cart
+              </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/about-us" routerLinkActive="active" >
+              <i class="fas fa-info-circle icon"></i>
+              About us
+            </a>
+          </li>
+
+        <ng-container *ngIf="loginResponse">
+          <li>
+              <div class="dropdown tags"  [attr.data-gloss]="loginResponse.fullname">
+                <button class="btn btn-primary dropdown-toggle"
+                type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-user icon" ></i>
+                  {{loginResponse.fullname}}
+                </button>
+                <ul class="dropdown-menu dropdown-menu-custom" aria-labelledby="dropdownMenuButton">
+                  <li *ngIf="loginResponse?.role_id === 2" routerLink="/admin/panel" routerLinkActive="active">Admin Panel</li>
+                  <li routerLink="/info" routerLinkActive="active">Profile</li>
+                  <li routerLink="/order-history" routerLinkActive="active">Order history</li>
+                  <li routerLink="/change-password" routerLinkActive="active">Change password</li>
+                  <li (click)="signOut()">Sign out</li>
+                </ul>
+              </div>
+          </li>
+        </ng-container>
+
+        <ng-container *ngIf="!loginResponse">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login" routerLinkActive="active">Sign in</a>
+          </li>
+          <li class="nav-item sign-up">
+            <a class="nav-link" routerLink="/register" routerLinkActive="active">Sign up</a>
+          </li>                          
+        </ng-container>
+
+          <li class="nav-item check-in">
+            <a class="nav-link" routerLinkActive="active" routerLink="/order">
+              <i class="fa-solid fa-bag-shopping">
+                <span>{{cartNumber}}</span>
+              </i>
+            </a>
+          </li>
+      </ul>
+      </div>
+    </div>
+  </nav>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"></script>
+</header>
+
+
+
+
+

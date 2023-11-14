@@ -1,0 +1,14 @@
+<div class="section-loader overlay" [style.display]="(loadingService.loading$ | async) ? 'flex' : 'none'">
+    <div class="loading">
+        <h1 class="text">Have a great day</h1>
+        <p class="text">Loading...</p>
+        <div class="loader">
+            <div style="--i:0"></div>
+            <div style="--i:1"></div>
+            <div style="--i:2"></div>
+            <div style="--i:3"></div>
+            <div style="--i:4"></div>
+        </div>
+    </div>
+</div>
+<!-- <app-animation-loading-page *ngIf="loadingService.loadingStatus$ | async"></app-animation-loading-page> -->

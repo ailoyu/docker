@@ -1,0 +1,350 @@
+.section .intro-section h1 {
+    font-size: 50px;
+    font-family: 'Oswald', sans-serif; 
+    font-style: italic;
+}
+
+.section .intro-section p {
+    font-size: 18px;
+}
+
+.intro-section {
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+
+
+// Nike -nicexu
+.right {
+    top: 100px;
+    bottom: 100px;
+}
+
+.section {
+    width: 100%;
+    height: 100%;
+    // margin-top: -80px;
+}
+
+.top {
+    margin-bottom: 90px;
+}
+
+.banner-video-ads {
+    width: 96%;
+    margin-left: 2%;
+    height: 100%;
+    z-index: 1;
+    text-align: center;
+}
+
+.banner-video-ads video {
+    width: 100%;
+    height: 1032px;
+    margin-bottom: 40px;
+    object-fit: cover;
+}
+
+.banner-video-ads h1 {
+    font-family: "Oswald", sans-serif;
+    font-weight: 900;
+    font-size: 65px;
+    color: #fffcfe;
+}
+
+.banner-video-ads p {
+    color: #fffcfe;
+    font-size: 18px;
+}
+
+.banner-video-ads .button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.banner-video-ads .button button {
+    background: linear-gradient(to right, rgb(225, 64, 180), rgb(126, 43, 237));
+    border-radius: 30px;
+    color: #ffffff;
+    font-weight: 500;
+    margin: 0px 6px 0px 0px;
+    padding: 6px 20px;
+    text-align: center;
+}
+
+.middle button,
+.bottom button {
+    background: linear-gradient(to right, rgb(225, 64, 180), rgb(126, 43, 237));
+    border-radius: 30px;
+    color: #ffffff;
+    font-weight: 500;
+    margin: 0px 6px 0px 0px;
+    padding: 6px 20px;
+    text-align: center;
+}
+
+.middle h3,
+.bottom h3 {
+    color: #fffcfe;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+span {
+    color: #fffcfe;
+    display: flex;
+    font-size: 26px;
+    font-weight: bold;
+    justify-content: space-between;
+    width: 96%;
+    margin-left: 2%;
+}
+
+.first {
+    margin-bottom: 120px;
+}
+
+.first .list {
+    display: flex;
+    margin: 50px 5%;
+    width: 90%;
+    justify-content: space-between;
+}
+
+
+.second {
+    margin-bottom: 80px;
+}
+
+.second .list {
+    display: flex;
+    margin-top: 36px;
+    margin-bottom: 50px;
+    justify-content: space-between;
+    width: 96%;
+    margin-left: 2%;
+}
+
+.second .list .list-item {
+    position: relative;
+    width: 705px;
+    height: 700px;
+}
+
+.second .list .list-item p {
+    color: #fffcfe;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.second .list .list-item .content .p-right {
+    font-weight: bold;
+    font-size: 16px;
+    color: #3a3a3a;
+}
+
+.second .list .list-item .content .h3-right {
+    color: #3a3a3a;
+}
+
+.second .list .list-item .button-right  {
+    background-color: #3a3a3a;
+    color: #ffffff ;
+    border-radius: 30px;
+    font-weight: 500;
+    padding: 6px 20px;
+}
+
+.second .list .list-item .button-right:hover {
+    background-color: #707072;
+}
+
+.second .list .list-item img {
+    position: relative;
+    width: 705px;
+    height: 700px;
+}
+
+.third {
+    margin-bottom: 90px;
+}
+
+.third .list {
+    display: flex;
+    margin-top: 36px;
+    margin-bottom: 50px;
+    justify-content: space-between;
+    width: 96%;
+    margin-left: 2%;
+}
+
+.third .list .list-item {
+    position: relative;
+    width: 705px;
+    height: 700px;
+}
+
+.third .list .list-item .content p {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.third .list .list-item .content .p-left {
+    font-weight: bold;
+    font-size: 16px;
+    color: #3a3a3a;
+}
+
+.third .list .list-item .content .h3-left {
+    color: #3a3a3a;
+}
+
+.third .list .list-item .button-left  {
+    background-color: #3a3a3a;
+    color: #ffffff ;
+    border-radius: 30px;
+    font-weight: 500;
+    padding: 6px 20px;
+}
+
+.third .list .list-item .button-left:hover {
+    background-color: #707072;
+}
+
+
+.fourth .list {
+    display: flex;
+    margin-top: 36px;
+    justify-content: space-between;
+    width: 96%;
+    margin-left: 2%;
+}
+
+.first .list .list-item img {
+    position: relative;
+    width: 435px;
+    height: 594px;
+}
+
+.list-item  {
+    position: relative;
+    width: 435px;
+    height: 594px;
+}
+
+.fourth .list-item {
+    position: relative;
+    width: 466px;
+    height: 540px;
+}
+
+.list .list-item .content button {
+    background-color: #ffffff;
+    color: #3a3a3a;
+    border-radius: 30px;
+    font-weight: 500;
+    padding: 6px 20px;
+}
+
+.list .list-item .content button:hover {
+    background-color: #9e9ea0;
+}
+
+.list-item .content h3 {
+    color: #fffcfe;
+    font-size: 20px;
+    margin-bottom: 35px;
+}
+
+.list .list-item .content button {
+    border: none;
+}
+
+.list-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.list-item .content {
+    position: absolute;
+    bottom: 40px;
+    left: 50px;
+    z-index: 1;
+}
+
+.middle {
+    margin-bottom: 90px;
+}
+
+.bottom {
+    margin-bottom: 90px;
+}
+
+.twinkle{
+    animation: slide-in 0.5s ease-in-out, fade-in 0.5s ease-in-out;
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+// Responsive
+// Mobile & tablet: width < 1024px
+@media only screen and (max-width: 63.9375em) {
+}
+
+// Mobile: width < 768px
+@media only screen and (max-width: 46.1875em) {
+    .container {
+        margin-top: 10px;
+        height: 76vh;
+    }
+
+    .carousel-image {
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    .carousel-caption {
+        width: 80%;
+        margin-left: 10%;
+    }
+}
+
+// Table: width >= 768px and width < 1024px
+@media screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+    .container {
+        margin-top: 10px;
+        height: 79vh;
+    }
+
+    .carousel-image {
+        width: 70%;
+        margin-left: 15%;
+    }
+
+    .carousel-caption {
+        width: 70%;
+        margin-left: 15%;
+    }
+}

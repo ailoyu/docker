@@ -1,0 +1,202 @@
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+h2 {
+    position: relative;
+    width: 62%;
+    font-size: 8vw;
+    color: #252839;
+    -webkit-text-stroke: 0.3vw #383d52;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+h2::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: #01fe87;
+    -webkit-text-stroke: 0vw #383d52;
+    border-right: 2px solid #01fe87;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: animate 6s linear infinite;
+}
+h3 {
+    position: relative;
+    // text-align: center;
+    // width: 100%;
+    width: 90%;
+    font-size: 8vw;
+    color: #252839;
+    -webkit-text-stroke: 0.3vw #383d52;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+h3::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: #01fe87;
+    -webkit-text-stroke: 0vw #383d52;
+    border-right: 2px solid #01fe87;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: animate 6s linear infinite;
+}
+
+@keyframes animate
+{
+    0%, 10%, 100%
+    {
+        width: 0;
+    }
+    70%, 90%
+    {
+        width: 100%;
+    }
+}
+
+
+// Slider section
+span {
+    font-size: 30px;
+    text-align: left;
+    color: #ffffff;
+}
+.product-shoes {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 340px;
+    margin-bottom: 40px;
+}
+
+.new-balance .product-shoes {
+    margin-bottom: 0px;
+}
+
+.product-shoes .container-fluid {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+.container-fluid .slider-wrap {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.slider-wrap .slider-main {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.slider-main .item {
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    height: 100%;
+    background-color: transparent;
+    color: #fff;
+    margin: 0px 12px;
+}
+
+
+p {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 30px;
+    color: red;
+}
+
+.slider-main .item .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.slider-main .item .text img {
+    width: 300px;
+    height: 100%;
+    border-radius: 4%;
+    object-fit: cover;
+}
+
+.prev {
+    position: absolute;
+    left: 2%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(to right, rgb(225, 64, 180), rgb(126, 43, 237));
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.next {
+    position: absolute;
+    right: -1%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(to right, rgb(225, 64, 180), rgb(126, 43, 237));
+    color: white;
+    border: none;    
+    cursor: pointer;
+}
+
+.twinkle{
+    animation: slide-in 0.5s ease-in-out, fade-in 0.5s ease-in-out;
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* CSS cho phần tử có thể kéo */
+.item[draggable="true"] {
+    cursor: grab;
+}
+
+/* CSS cho mục tiêu có thể kéo qua */
+.product-shoes {
+// border: 2px dashed #ccc; /* Đổi màu và đường kẻ tùy ý */
+}
+

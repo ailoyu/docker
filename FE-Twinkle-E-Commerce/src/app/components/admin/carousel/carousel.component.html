@@ -1,0 +1,34 @@
+<div *ngIf="imagesnicexu && imagesnicexu.length > 0" class="carousel-container edit-overall">
+    <img *ngFor="let image of imagesnicexu; let i=index"
+    [src]="image.imageSrc" [alt]="image.imageAlt"
+    [ngClass]="{'image-active': selectedIndex === i}"
+    class="fade">
+
+    <div *ngIf="indicators" class="carousel-dot-container">
+        <span *ngFor="let dot of imagesnicexu; let i=index" class="dot"
+        [ngClass]="{'active': selectedIndex === i}"
+        (click)="selectImage(i)">
+        </span>
+    </div>
+</div>
+
+<!-- Awesome Carousel -->
+<!-- <app-carousel [images]="imagesnicexu"></app-carousel>  -->
+
+
+<!-- Auto Slide -->
+<!-- <app-carousel [images]="imagesnicexu" [autoSlide]="true"></app-carousel>  -->
+
+<!-- Auto slide with custom interval -->
+<!-- <app-carousel [images]="imagesnicexu" [autoSlide]="true" [slideInterval]="2000"></app-carousel>  -->
+
+
+<!-- Hide dot indicators -->
+<!-- <app-carousel [images]="imagesnicexu" [indicators]="false"></app-carousel> -->
+
+
+<!-- Hide button controls
+<app-carousel [images]="imagesnicexu" [indicators]="false"></app-carousel> -->
+
+<!-- Three function include: hide button controls, auto slide and custom interval -->
+<!-- <app-carousel [images]="imagesnicexu" [controls]="false" [autoSlide]="true" [slideInterval]="3000"></app-carousel>  -->

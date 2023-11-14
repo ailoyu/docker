@@ -1,0 +1,14 @@
+.cursor {
+    width: 40px;
+    height: 40px;
+    background-image: url('/assets/images/nicexu.png');
+    background-size: cover;
+    position: absolute;
+    cursor: none; /* Tắt con trỏ mặc định của Windows */
+    pointer-events: none;
+    z-index: 9999;
+    will-change: transform;
+    // transform: translate(-50%, -50%);
+    transition: transform 0.1s ease; // Adjust the duration and timing function
+}
+

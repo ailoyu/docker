@@ -1,0 +1,52 @@
+<app-header></app-header>
+
+<div class="edit-overall">
+  <div class="dashboard">
+    <app-admin-dashboard></app-admin-dashboard>
+    <div class="container twinkle">
+      <div class="confirmation-container">
+          <h1>Thống kê dữ liệu</h1>
+          <p>Dưới đây là các thống kê dữ liệu sơ bộ </p>     
+          <button class="btn btn-gradient" type="button" (click)="exportAllChartsPDF()">Export All Charts as PDF</button>
+      </div>
+        <div class="row">
+          <div style="width: 500px; height: 450px; padding-bottom: 100px;">
+          <h2 style="text-align: center;">Categories Available</h2>
+              <canvas id="pieChart"></canvas>
+            </div>
+            <div style="width: 500px; height: 450px; padding-bottom: 100px;">
+              <h2 style="text-align: center;">Brands Available</h2>
+                  <canvas id="pieChart2"></canvas>
+                </div>
+                <div style="width: 500px; height: 450px; padding-bottom: 100px;">
+                  <h2 style="text-align: center;">Order status statistics</h2>
+                      <canvas id="pieChart3"></canvas>
+                    </div>
+                    <div style="width: 500px; height: 450px; padding-bottom: 100px;">
+                      <h2 style="text-align: center;">Price range statistics</h2>
+                          <canvas id="pieChart4"></canvas>
+                        </div>
+              </div>  
+              
+              
+                  
+
+          
+      
+
+  </div>
+  </div>
+  <div style="width: 1350px;">
+    <h2 style="text-align: center; color: white;">Sales Revenue Statistics</h2>
+      <canvas id="barChart3"></canvas>
+    </div>  
+  <div style="width: 1350px;">
+    <h2 style="text-align: center; color: white;">Sizes Available</h2>
+      <canvas id="barChart2"></canvas>
+    </div>  
+  <div style="width: 1350px;">
+  <h2 style="text-align: center; color: white;">Products Available</h2>
+  <canvas id="barChart"></canvas>
+  </div>  
+</div>
+<app-footer></app-footer>

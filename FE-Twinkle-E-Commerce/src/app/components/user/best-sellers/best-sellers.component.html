@@ -1,0 +1,165 @@
+<app-header></app-header>
+<div class="container edit-overall twinkle">
+    <h2 data-text="Best-Sellers">Best-Sellers</h2>
+    <h3 data-text="Shoes-Collection">Shoes-Collection</h3>
+    
+    <!-- This is the content of the image slider for shoes -->
+    <!-- Nike -->
+    <div class="nike" *ngIf="nikes.length > 0">
+        <span>Nike</span>
+        <div class="nike">
+            <div class="product-shoes">
+                <div class="container-fluid">
+                    <div class="slider-wrap">
+                        <div class="slider-main">
+                            <div class="item" *ngFor="let nike of nikes">
+                                <div class="text" (click)="onProductClick(nike.id)"><img [src]="nike.thumbnail" alt=""></div>
+                            </div>
+                        </div>
+                        <div class="button-area">
+                            <button type="button" class="prev" appPrev><i class="fa-solid fa-angle-left"></i></button>
+                            <button type="button" class="next" appNext><i class="fa-solid fa-angle-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+
+    <!-- Adidas -->
+    <div class="adidas" *ngIf="adidases.length > 0">
+    <span>Adidas</span>
+    <div class="adidas">
+        <div class="product-shoes">
+            <div class="container-fluid">
+                <div class="slider-wrap">
+                    <div class="slider-main">
+                        <div class="item" *ngFor="let adidas of adidases">
+                            <div class="text" (click)="onProductClick(adidas.id)"><img [src]="adidas.thumbnail" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="button-area">
+                        <button type="button" class="prev" appPrev><i class="fa-solid fa-angle-left"></i></button>
+                        <button type="button" class="next" appNext><i class="fa-solid fa-angle-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    </div>
+
+
+    <!-- Converse -->
+    <div class="nike" *ngIf="converses.length > 0">
+    <span>Converse</span>
+    <div class="converse">
+        <div class="product-shoes">
+            <div class="container-fluid">
+                <div class="slider-wrap">
+                    <div class="slider-main">
+                        <div class="item" *ngFor="let converse of converses">
+                            <div class="text" (click)="onProductClick(converse.id)"><img [src]="converse.thumbnail" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="button-area">
+                        <button type="button" class="prev" appPrev><i class="fa-solid fa-angle-left"></i></button>
+                        <button type="button" class="next" appNext><i class="fa-solid fa-angle-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Vans -->
+    <div class="nike" *ngIf="vans.length > 0">
+    <span>Vans</span>
+    <div class="vans">
+        <div class="product-shoes">
+            <div class="container-fluid">
+                <div class="slider-wrap">
+                    <div class="slider-main">
+                        <div class="item" *ngFor="let van of vans">
+                            <div class="text" (click)="onProductClick(van.id)"><img [src]="van.thumbnail" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="button-area">
+                        <button type="button" class="prev" appPrev><i class="fa-solid fa-angle-left"></i></button>
+                        <button type="button" class="next" appNext><i class="fa-solid fa-angle-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+    </div>
+
+    <!-- Puma -->
+    <div class="nike" *ngIf="pumas.length > 0">
+    <span>Puma</span>
+    <div class="puma">
+        <div class="product-shoes">
+            <div class="container-fluid">
+            <div class="slider-wrap">
+                <div class="slider-main">
+                    <div class="item" *ngFor="let puma of pumas">
+                        <div class="text" (click)="onProductClick(puma.id)"><img [src]="puma.thumbnail" alt=""></div>
+                    </div>
+                </div>
+                <div class="button-area">
+                <button type="button" class="prev" appPrev><i class="fa-solid fa-angle-left"></i></button>
+                <button type="button" class="next" appNext><i class="fa-solid fa-angle-right"></i></button>
+                </div>
+            </div>
+            </div>
+        </div> 
+    </div>
+    </div>
+
+    <!-- Reebok -->
+    <div class="reebok" *ngIf="reeboks.length > 0">
+        <span>Reebok</span>
+        <div class="puma">
+            <div class="product-shoes">
+                <div class="container-fluid">
+                <div class="slider-wrap">
+                    <div class="slider-main">
+                        <div class="item" *ngFor="let reebok of reeboks">
+                            <div class="text" (click)="onProductClick(reebok.id)"><img [src]="reebok.thumbnail" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="button-area">
+                    <button type="button" class="prev" appPrev><i class="fa-solid fa-angle-left"></i></button>
+                    <button type="button" class="next" appNext><i class="fa-solid fa-angle-right"></i></button>
+                    </div>
+                </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+
+
+
+    <!-- New Balance -->
+    <div class="new-balance" *ngIf="newBalances.length > 0">
+    <span>New Balance</span>
+        <div class="new-balance">
+            <div class="product-shoes">
+                <div class="container-fluid">
+                <div class="slider-wrap">
+                    <div class="slider-main">
+                        <div class="item" *ngFor="let newBalance of newBalances">
+                            <div class="text" (click)="onProductClick(newBalance.id)"><img [src]="newBalance.thumbnail" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="button-area">
+                    <button type="button" class="prev" appPrev><i class="fa-solid fa-angle-left"></i></button>
+                    <button type="button" class="next" appNext><i class="fa-solid fa-angle-right"></i></button>
+                    </div>
+                </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

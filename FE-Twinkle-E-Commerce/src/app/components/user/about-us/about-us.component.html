@@ -1,0 +1,214 @@
+<app-header></app-header>  
+<div class="container edit-overall twinkle">
+  <!-- Background animation "bubbles" -->
+  <div class="bubbles">
+    <!-- Bubbles-Left -->
+    <span style="--i:11;"></span>
+    <span style="--i:12;"></span>
+    <span style="--i:24;"></span>
+    <span style="--i:10;"></span>
+    <span style="--i:14;"></span>
+    <span style="--i:23;"></span>
+    <span style="--i:18;"></span>
+    <span style="--i:16;"></span>
+    <span style="--i:19;"></span>
+    <span style="--i:20;"></span>
+    <span style="--i:22;"></span>
+    <span style="--i:25;"></span>
+    <span style="--i:21;"></span>
+    <span style="--i:15;"></span>
+    <span style="--i:13;"></span>
+    <span style="--i:26;"></span>
+    <span style="--i:17;"></span>
+    <span style="--i:13;"></span>
+    <span style="--i:28;"></span>
+    <!-- Bubbles-Right -->
+    <span style="--i:11;"></span>
+    <span style="--i:12;"></span>
+    <span style="--i:24;"></span>
+    <span style="--i:10;"></span>
+    <span style="--i:14;"></span>
+    <span style="--i:23;"></span>
+    <span style="--i:18;"></span>
+    <span style="--i:16;"></span>
+    <span style="--i:19;"></span>
+    <span style="--i:20;"></span>
+    <span style="--i:22;"></span>
+    <span style="--i:25;"></span>
+    <span style="--i:21;"></span>
+    <span style="--i:15;"></span>
+    <span style="--i:13;"></span>
+    <span style="--i:26;"></span>
+    <span style="--i:17;"></span>
+    <span style="--i:13;"></span>
+    <span style="--i:28;"></span>
+  </div>
+
+  <!-- Text "Distortion" animation effects -->
+    <div class="text-animation">
+      <!-- <div class="content"> -->
+        <!-- <span class="border-line"></span> -->
+        <video class="right-to-left" autoplay loop src="https://res.cloudinary.com/dxctlgwec/video/upload/v1699534645/cfxmkttjz1vumtkwyxjx.mp4?fbclid=IwAR0hi5C5R44OjK9OfGwc-ZXH5o568nVmcnlcHrggfKR-Qlx83Idu6WvO1eQ"></video>
+        <h2><span>W</span>e Are <span>The </span>Legendary</h2>
+      <!-- </div> -->
+    </div>
+  
+    <!-- Profile card content -->
+  <div class="profile-card">
+      <div class="profile-1">
+        <div class="card">
+          <div class="card-inner">
+            <div class="front">
+              <img src="./assets/images/character-1.jpg" alt="">
+              <div class="content">
+                <h2>Ngô Quốc Ân</h2>
+                <p>Web Designer, VIETNAM</p>
+                <button type="button" class="btn btn-outline-primary">Hover me</button>
+              </div>
+            </div>
+            <div class="back">
+              <img src="./assets/images/waving-hand.png" alt="">
+              <h1>Ngô <span>Quốc Ân</span></h1>
+              <p>I'm a Front-end developer and make this website.</p>
+              <div class="row">
+                <div class="col">
+                  <h2>12k</h2>
+                  <p>Followers</p>
+                </div>
+                <div class="col">
+                  <h2>250</h2>
+                  <p>Following</p>
+                </div>
+                <div class="col">
+                  <h2>5K</h2>
+                  <p>Likes</p>
+                </div>
+              </div>
+      
+              <div class="row">
+                <button>follow</button>
+                <a href="#"><img src="./assets/images/instagram.png" alt=""></a>
+                <a href="#"><img src="./assets/images/pinterest.png" alt=""></a>
+                <a href="#"><img src="./assets/images/facebook.png" alt=""></a>
+              </div>
+            </div>      
+          </div>
+        </div>
+      </div>
+      
+      <div class="profile-2">
+        <div class="card">
+          <div class="card-inner">
+            <div class="front">
+              <img src="./assets/images/character-2.jpg" alt="">
+              <div class="content">
+                <h2>Trịnh Huỳnh Chấn Quang</h2>
+                <p>Web Dev, VIETNAM</p>
+                <button style="color: #240747"
+                type="button" class="btn btn-outline-primary">Hover me</button>
+              </div>
+            </div>
+            <div class="back">
+              <img src="./assets/images/waving-hand.png" alt="">
+              <h1>Trịnh <span> Huỳnh Chấn Quang</span></h1>
+              <p>I'm a Back-end developer and make this website.</p>
+              <div class="row">
+                <div class="col">
+                  <h2>12k</h2>
+                  <p>Followers</p>
+                </div>
+                <div class="col">
+                  <h2>250</h2>
+                  <p>Following</p>
+                </div>
+                <div class="col">
+                  <h2>5K</h2>
+                  <p>Likes</p>
+                </div>
+              </div>
+      
+              <div class="row">
+                <button>follow</button>
+                <a href="#"><img src="./assets/images/instagram.png" alt=""></a>
+                <a href="#"><img src="./assets/images/pinterest.png" alt=""></a>
+                <a href="#"><img src="./assets/images/facebook.png" alt=""></a>
+              </div>
+            </div>      
+          </div>
+        </div>
+      </div>   
+  </div>
+  <div class="box-father">
+    <a class="filter-button" (click)="toggleColorTable()" (click)="toggleFilterButtonBefore()" [ngClass]="{ 'button-before-hidden': !isFilterButtonBeforeVisible }">Experiences</a>
+    <a class="filter-button" (click)="toggleColorTable2()" (click)="toggleFilterButtonBefore()" [ngClass]="{ 'button-before-hidden': !isFilterButtonBeforeVisible }">Experiences</a>
+  </div>
+  <div class="water" *ngIf="isColorTableVisible" #colorTable>
+    <div class="container">
+      <div class="drop" style="--clr:#ff0f5b;">
+        <div class="content">
+          <h2>80%</h2>
+          <p>Html</p>
+          <a href="#">Research More</a>
+        </div>
+      </div>
+      <div class="drop" style="--clr:#be04fe;">
+        <div class="content">
+          <h2>70%</h2>
+          <p>Css</p>
+          <a href="#">Research More</a>
+        </div>
+      </div>
+      <div class="drop" style="--clr:#01b4ff;">
+        <div class="content">
+          <h2>80%</h2>
+          <p>Javascript</p>  
+          <a href="#">Research More</a>
+        </div>
+      </div>
+      <div class="drop" style="--clr:#0e2431;">
+        <div class="content">
+          <h2>30%</h2>
+          <p>Back-end</p>  
+          <a href="#">Research More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="water" *ngIf="isColorTable2Visible" #colorTable2>
+    <div class="container">
+      <div class="drop" style="--clr:#ff0f5b;">
+        <div class="content">
+          <h2>60%</h2>
+          <p>Html</p>
+          <a href="#">Research More</a>
+        </div>
+      </div>
+      <div class="drop" style="--clr:#be04fe;">
+        <div class="content">
+          <h2>40%</h2>
+          <p>Css</p>
+          <a href="#">Research More</a>
+        </div>
+      </div>
+      <div class="drop" style="--clr:#01b4ff;">
+        <div class="content">
+          <h2>80%</h2>
+          <p>Javascript</p>  
+          <a href="#">Research More</a>
+        </div>
+      </div>
+      <div class="drop" style="--clr:#0e2431;">
+        <div class="content">
+          <h2>80%</h2>
+          <p>Back-end</p>  
+          <a href="#">Research More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  
+<app-footer></app-footer>
+
+
+
+
