@@ -1,6 +1,6 @@
 .section {
-    height: 251vh;
-    margin-top: 180px;
+    height: 256vh;
+    margin-top: 200px;
 }
 
 
@@ -28,7 +28,7 @@
 .section {
     display: grid;
     grid-template-columns: 300px 800px auto;
-    grid-template-rows: 450px 300px 374px 110px 542px;
+    grid-template-rows: 550px 300px 374px 110px 542px;
     column-gap: 40px;
     row-gap: 10px;
     margin-right: 20px;
@@ -51,7 +51,7 @@
 }
 
 .item-1 .animation-img .card-content {
-    height: 452px;
+    height: 550px;
 }
 
 .item-1 .animation-img .card-content .bg-image {
@@ -577,7 +577,6 @@
     height: 648px;
 }
 
-
 .item-6 .filter-button::before {
     display: none;
 }
@@ -855,8 +854,6 @@ img {
 }
 
 
-
-
                                         // item-10
 .item-10 {
     grid-area: img-animation-5-left;
@@ -865,5 +862,32 @@ img {
 
 .item-10 .animation-img {
     margin-top: -72px;
+}
+
+.twinkle{
+    animation: slide-in 0.5s ease-in-out, fade-in 0.5s ease-in-out;
+}
+
+@keyframes slide-in
+{
+    0% 
+    {
+    transform: translateX(-100%);
+    }
+    100%
+    {
+    transform: translateX(0);
+    }
+}
+
+@keyframes fade-in {
+    0%
+    {
+    opacity: 0;
+    }
+    100%
+    {
+    opacity: 1;
+    }
 }
 

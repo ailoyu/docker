@@ -3,37 +3,26 @@
   background-color: #83580b;
   padding: 20px;
   animation: slide-in 0.5s ease-in-out;
-  height: 1818px;
+  height: auto;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   font-weight: bold;
-}
-
-.dashboard-sidebar ul {
-  margin-top: 20px;
-}
-
-@keyframes slide-in {
-0% {
-  transform: translateX(-100%);
-}
-100% {
-  transform: translateX(0);
-}
-}
-
-@keyframes fade-in {
-0% {
-  opacity: 0;
-}
-100% {
-  opacity: 1;
-}
+  overflow: hidden;
+  position: sticky;
+  top: 126px;
+  z-index: 100;
+  transition: 2s linear;
+  transition-delay: 0.5s;
 }
 
 .dashboard-sidebar ul {
   list-style: none;
   padding: 0;
+  position: sticky;
+  z-index: 50;
+  transition: 2s linear;
+  transition-delay: 0.5s;
+  margin-bottom: -35px;
 }
 
 .dashboard-sidebar li {
@@ -43,15 +32,6 @@
   transition: color 0.3s ease-in-out;
   font-size: 18px;
 }
-
-// .dashboard-sidebar menu-item li::before {
-//   content:"";
-//   width: 300px;
-//   height: 300px;
-//   border-radius: 50%;
-//   top: 0px;
-//   left: 0px;
-// }
 
 .dashboard-sidebar .menu-item {
   display: flex;
@@ -94,7 +74,6 @@
   padding-left: 20px;
   border-radius: 40px;
   margin-bottom: 35px;
-  margin-top: -10px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -113,15 +92,6 @@
   justify-content: flex-start;
   align-items: center;
 }
-
-
-
-
-
-// .dashboard-sidebar ul .active-link-child:hover a {
-//   color: red;
-//   font-size: normal;
-// }
 
 .dashboard-sidebar .active-link .menu-item a {
   margin-left: -10px;

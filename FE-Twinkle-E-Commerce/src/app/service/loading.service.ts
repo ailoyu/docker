@@ -20,7 +20,7 @@ export class LoadingService {
   // Test 1
   private initialLoadComplete = false; // Track if the initial load is complete
   initialLoadDuration = 1500; // Set the initial load duration to 1.5 seconds
-  subsequentLoadDuration = 5000; // Set the subsequent load duration to 5 seconds
+  subsequentLoadDuration = 4000; // Set the subsequent load duration to 5 seconds
   // End test 1
 
 

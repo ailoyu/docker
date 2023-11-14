@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { HeightService } from 'src/app/service/height.service';
+
 
 
 @Component({
@@ -9,26 +11,54 @@ import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 })
 export class AdminDashboardComponent {
   subMenuVisible = false;
+  subMenuVisible1 = false;
+  subMenuVisible2 = false;
+  
+  constructor(private router: Router, private heightService: HeightService) {}
+
 
   toggleSubMenu() {
     debugger
     this.subMenuVisible = !this.subMenuVisible;
   }
 
-  subMenuVisible1 = false;
-
   toggleSubMenu1() {
     debugger
     this.subMenuVisible1 = !this.subMenuVisible1;
   }
-
-  subMenuVisible2 = false;
 
   toggleSubMenu2() {
     debugger
     this.subMenuVisible2 = !this.subMenuVisible2;
   }
 
+
+  ngOnInit() {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.setSidebarHeight();
+      }
+    });
+  }
+
+  setSidebarHeight() {
+    const currentRoute = this.router.url;
+  
+    if (currentRoute.includes('/admin/panel')) {
+      this.heightService.setHeight(3282);
+    } else if (currentRoute.includes('/admin/order-confirm/pending')) {
+      this.heightService.setHeight(2000);
+    } else if (currentRoute.includes('/admin/list-categories')) {
+      this.heightService.setHeight(7000);
+    } else if (currentRoute.includes('/admin/list-customers')) {
+      this.heightService.setHeight(4000);
+    } else {
+      // Set a default height
+      this.heightService.setHeight(500);
+    }
+  }
+  
+  
   // Test
   // subMenuVisible = false;
   // subMenuVisible1 = false;

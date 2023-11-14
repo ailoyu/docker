@@ -2,7 +2,34 @@
     <img *ngFor="let image of imagesnicexu; let i=index"
     [src]="image.imageSrc" [alt]="image.imageAlt"
     [ngClass]="{'image-active': selectedIndex === i}"
+    [style.object-position]="image.objectPosition"
     class="fade">
+
+    <ng-container *ngFor="let item of images; let i = index">
+        <ng-container *ngIf="item.contentType === 'image'">
+          <img
+            *ngIf="selectedIndex === i"
+            [src]="item.imageSrc"
+            [alt]="item.imageAlt"
+            [ngClass]="{'image-active': selectedIndex === i}"
+            class="fade"
+            [style.object-position]="item.objectPosition"
+          />
+        </ng-container>
+        <ng-container *ngIf="item.contentType === 'video'">
+          <div (click)="playVideo(i)">
+            <video class="animation-video"
+              *ngIf="selectedIndex === i"
+              autoplay
+              [muted]="true"
+              [src]="item.videoSrc"
+              type="video/mp4"
+            >
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </ng-container>
+      </ng-container>
 
     <div *ngIf="indicators" class="carousel-dot-container">
         <span *ngFor="let dot of imagesnicexu; let i=index" class="dot"

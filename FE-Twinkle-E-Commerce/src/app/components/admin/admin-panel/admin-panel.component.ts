@@ -7,19 +7,16 @@ import {jsPDF} from 'jspdf'; // Import jsPDF
 
 
 
-interface carouselImage {
-  imageSrc: string;
-  imageAlt: string;
-}
-
 @Component({
   selector: 'app-admin-panel',
   templateUrl: './admin-panel.component.html',
   styleUrls: ['./admin-panel.component.scss']
 })
-export class AdminPanelComponent implements OnInit  {
-  title = 'chartDemo';
 
+export class AdminPanelComponent implements OnInit  {
+  canvasWidth = 400;
+  canvasHeight = 400;
+  title = 'chartDemo';
   barChart: any;
   pieChart: any;
 
