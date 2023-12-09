@@ -1,6 +1,8 @@
 package com.twinkle.shopapp.dtos;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.twinkle.shopapp.models.Provider;
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -12,6 +14,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ProviderDTO {
 
     @JsonProperty("name")
@@ -36,4 +39,16 @@ public class ProviderDTO {
 
     @JsonProperty("description")
     private String description;
+
+
+    public static ProviderDTO fromProvider(Provider provider) {
+        return ProviderDTO.builder()
+                .name(provider.getName())
+                .address(provider.getAddress())
+                .website(provider.getWebsite())
+                .phoneNumber(provider.getPhoneNumber())
+                .email(provider.getEmail())
+                .description(provider.getDescription())
+                .build();
+    }
 }

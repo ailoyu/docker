@@ -1,5 +1,6 @@
 package com.twinkle.shopapp.controllers;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.github.javafaker.Faker;
 import com.twinkle.shopapp.component.LocalizationUtils;
 import com.twinkle.shopapp.configuration.VNPayConfig;
@@ -11,6 +12,7 @@ import com.twinkle.shopapp.exceptions.DataNotFoundException;
 import com.twinkle.shopapp.models.Order;
 import com.twinkle.shopapp.models.Product;
 import com.twinkle.shopapp.models.ProductImage;
+import com.twinkle.shopapp.redis.IProductRedisService;
 import com.twinkle.shopapp.repositories.OrderRepository;
 import com.twinkle.shopapp.repositories.ProductRepository;
 import com.twinkle.shopapp.repositories.UserRepository;
@@ -181,6 +183,8 @@ public class ProductController {
 
     private final ProductRepository productRepository;
 
+    private final IProductRedisService productRedisService;
+
     @GetMapping("")
     public ResponseEntity<ProductListResponse> getAllProducts(
             @RequestParam(defaultValue = "") String keyword, // search
@@ -191,18 +195,34 @@ public class ProductController {
             @RequestParam(defaultValue = "", name = "selected_provider") String selectedProvider,
             @RequestParam int page,
             @RequestParam("limit") int limits
-    ) {
+    ) throws JsonProcessingException {
         // Lưu ý: page bắt đầu từ 0 (phải lấy page - 1)
         // page: là trang đang đứng htai, limits: tổng số item trong 1 trang
         PageRequest pageRequest = PageRequest.of(page - 1, limits, Sort.by(Sort.Direction.ASC, "d.price"));
         if(orderBy.equals("desc")){
             pageRequest = PageRequest.of(page - 1, limits, Sort.by(Sort.Direction.DESC, "d.price"));
         }
+        // lưu redis and kiểm tra có trong redis hay không?
+        List<ProductResponse> productResponses = productRedisService.getAllProducts(keyword, categoryId, size, orderBy, selectedPriceRate, selectedProvider, pageRequest);
+        if(productResponses == null){
+            // Lưu redis
+            Page<ProductResponse> productPage = productService
+                    .getAllProducts(keyword, categoryId, size, selectedPriceRate, selectedProvider, pageRequest);
+            productResponses = productPage.getContent();
+            productRedisService.saveAllProducts(
+                    productResponses,
+                    keyword, // search
+                    categoryId, // tìm theo thể loại
+                    size,
+                    orderBy,
+                    selectedPriceRate,
+                    selectedProvider,
+                    pageRequest
 
-        // Lấy các products được filter
-        Page<ProductResponse> productPage = productService
-                .getAllProducts(keyword, categoryId, size, selectedPriceRate, selectedProvider, pageRequest);
-        List<ProductResponse> products = productPage.getContent();
+            );
+        }
+
+
 
         // Lấy số trang của product được filter
         Long totalDistinctCount = productRepository.countDistinctProducts(categoryId, keyword, size, selectedPriceRate, selectedProvider);
@@ -211,7 +231,7 @@ public class ProductController {
 
 
         return ResponseEntity.ok(new ProductListResponse().builder()
-                    .products(products)
+                    .products(productResponses)
                     .totalPage(totalPages)
                     .build());
     }
@@ -291,6 +311,7 @@ public class ProductController {
         try{
             Product product = productService.getProductById(productId);
             ProductResponse productResponse = ProductResponse.fromProduct(product);
+
             return ResponseEntity.ok().body(productResponse);
         }catch (Exception e){
             return ResponseEntity.badRequest().body(e.getMessage());
@@ -317,8 +338,14 @@ public class ProductController {
     @GetMapping("/products-from-brand/{brand}")
     public ResponseEntity<?> getProductByBrands(
             @PathVariable(name = "brand") String brand
-    ){
-        return ResponseEntity.ok(productService.getProductsByBrands(brand));
+    ) throws JsonProcessingException {
+        List<ProductResponse> productResponses = productRedisService.getProductsByBrands(brand);
+        if(productResponses == null){
+            // Lấy các products được filter
+            productResponses = productService.getProductsByBrands(brand);
+            productRedisService.saveProductsByBrands(productResponses, brand);
+        }
+        return ResponseEntity.ok(productResponses);
     }
 
     private final OrderRepository orderRepository;

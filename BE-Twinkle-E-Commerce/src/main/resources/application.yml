@@ -10,10 +10,10 @@ server:
 
 spring:
   datasource:
-    url: ${SPRING_DATASOURCE_URL}
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://mysql8-container:3307/ShopApp?serverTimezone=UTC&allowPublicKeyRetrieval=true}
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
-    password: ${MYSQL_ROOT_PASSWORD}
+    password: ${MYSQL_ROOT_PASSWORD:Abc123456789@}
 
 #spring:
 #  datasource:
@@ -35,10 +35,16 @@ spring:
     multipart:
       max-file-size: 10MB
       max-request-size: 10MB
+  redis:
+    host: redis-container # Default to 'localhost' if not provided
+    port: ${REDIS_HOST:6379}   # Default to 6379 if not provided
   messages:
     basename: i18n/messages
     encoding: UTF-8
     default-locale: en
+
+
+
 
 api:
   prefix: api/v1

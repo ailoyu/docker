@@ -2,6 +2,7 @@ package com.twinkle.shopapp.responses;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.twinkle.shopapp.dtos.ProviderDTO;
 import com.twinkle.shopapp.models.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
@@ -45,7 +46,7 @@ public class ProductResponse extends BaseResponse{
     @JsonProperty("product_images")
     private List<ProductImage> productImages = new ArrayList<>();
 
-    private Provider provider;
+    private ProviderDTO provider;
 
     @JsonProperty("input_order_id")
     private long inputOrderId;
@@ -53,13 +54,15 @@ public class ProductResponse extends BaseResponse{
     // Chuyển từ product -> ProductResponse
     public static ProductResponse fromProduct(Product product){
         // Map Size và Quantity
-        Provider provider = new Provider();
+
+        ProviderDTO providerDTO = new ProviderDTO();
+
         Map<Float, Integer> sizeToQuantityMap = new HashMap<>();
         for(DetailInputOrder detailInputOrder : product.getDetailInputOrders()){
             Float size = detailInputOrder.getSize();
             int quantity = detailInputOrder.getQuantity();
-            provider = detailInputOrder.getInputOrder().getProvider();
-
+            Provider provider = detailInputOrder.getInputOrder().getProvider();
+            providerDTO = ProviderDTO.fromProvider(provider);
             if (sizeToQuantityMap.containsKey(size)) {
                 // Nếu kích thước đã tồn tại trong Map, thì cộng thêm quantity vào tổng quantity tương ứng.
                 int existingQuantity = sizeToQuantityMap.get(size);
@@ -95,7 +98,7 @@ public class ProductResponse extends BaseResponse{
                 .categoryId(product.getCategory().getId())
                 .categoryName(product.getCategory().getName())
                 .productImages(product.getProductImages())
-                .provider(provider)
+                .provider(providerDTO)
 //                .inputOrderId(product
 //                        .getDetailInputOrders()
 //                        .get(product.getDetailInputOrders().size() - 1)
