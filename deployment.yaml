@@ -1,17 +1,17 @@
-#scp -pr /Users/hoangnd/Documents/code/udemy/ShopApp/sql root@45.117.179.16:/root/
+#scp -pr C:/Users/quang/Desktop/docker/sql root@45.117.179.16:/root/
 
-#scp -pr /Users/hoangnd/Documents/code/udemy/ShopApp/shopapp-backend root@45.117.179.16:/root/
-#scp -pr /Users/hoangnd/Documents/code/udemy/ShopApp/shopapp-backend/src/main/resources/application.yaml root@45.117.179.16:/root/shopapp-backend/src/main/resources/
-#scp -pr /Users/hoangnd/Documents/code/udemy/ShopApp/deployment.yaml root@45.117.179.16:/root/
-#scp -pr /Users/hoangnd/Documents/code/udemy/ShopApp/DockerfileJavaSpring root@45.117.179.16:/root/
+#scp -pr C:/Users/quang/Desktop/docker/BE-Twinkle-E-Commerce root@45.117.179.16:/root/
+#scp -pr C:/Users/quang/Desktop/docker/BE-Twinkle-E-Commerce/src/main/resources/application.yaml root@45.117.179.16:/root/shopapp-backend/src/main/resources/
+#scp -pr C:/Users/quang/Desktop/docker/deployment.yaml root@45.117.179.16:/root/
+#scp -pr C:/Users/quang/Desktop/docker/DockerfileJavaSpring root@45.117.179.16:/root/
 
 #Deploy angular app
 #copy angular code to server
-#rm -rf /Users/hoangnd/Documents/code/udemy/ShopApp/shopapp-angular/node_modules
-#scp -r /Users/hoangnd/Documents/code/udemy/ShopApp/shopapp-angular root@45.117.179.16:/root/
-#scp -r /Users/hoangnd/Documents/code/udemy/ShopApp/shopapp-angular/src/app/environments/environment.ts root@45.117.179.16:/root/shopapp-angular/src/app/environments/
-#scp -pr /Users/hoangnd/Documents/code/udemy/ShopApp/DockerfileAngular root@45.117.179.16:/root/
-#scp -pr /Users/hoangnd/Documents/code/udemy/ShopApp/deployment.yaml root@45.117.179.16:/root/
+#rm -rf C:/Users/quang/Desktop/docker/FE-Twinkle-E-Commerce/node_modules
+#scp -r C:/Users/quang/Desktop/docker/FE-Twinkle-E-Commerce root@45.117.179.16:/root/
+#scp -r C:/Users/quang/Desktop/docker/FE-Twinkle-E-Commerce/src/app/environments/environment.ts root@45.117.179.16:/root/shopapp-angular/src/app/environments/
+#scp -pr C:/Users/quang/Desktop/docker/DockerfileAngular root@45.117.179.16:/root/
+#scp -pr C:/Users/quang/Desktop/docker/deployment.yaml root@45.117.179.16:/root/
 
 version: '3.7'
 services:
