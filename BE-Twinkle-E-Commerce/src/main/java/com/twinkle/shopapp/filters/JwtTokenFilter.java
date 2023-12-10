@@ -92,6 +92,23 @@ public class JwtTokenFilter extends OncePerRequestFilter {
     private boolean isBypassToken(@NonNull HttpServletRequest request){
         // Các danh sách API được pass ko cần sử dụng token
         final List<Pair<String, String>> bypassTokens = Arrays.asList(
+                // Healthcheck request, no JWT token required
+                Pair.of(String.format("%s/healthcheck/health", apiPrefix), "GET"),
+                Pair.of(String.format("%s/actuator/**", apiPrefix), "GET"),
+
+                // Swagger
+                Pair.of("/api-docs","GET"),
+                Pair.of("/api-docs/**","GET"),
+                Pair.of("/swagger-resources","GET"),
+                Pair.of("/swagger-resources/**","GET"),
+                Pair.of("/configuration/ui","GET"),
+                Pair.of("/configuration/security","GET"),
+                Pair.of("/swagger-ui/**","GET"),
+                Pair.of("/swagger-ui.html", "GET"),
+                Pair.of("/swagger-ui/index.html", "GET"),
+
+
+                // API web
                 Pair.of(String.format("%s/products", apiPrefix), "GET"),
                 Pair.of(String.format("%s/categories", apiPrefix), "GET"),
                 Pair.of(String.format("%s/users/register", apiPrefix), "POST"),

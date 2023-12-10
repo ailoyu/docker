@@ -114,7 +114,7 @@ networks:
 
 #docker-compose -f ./deployment.yaml rm -s -f shopapp-spring-container 
 #docker-compose -f ./deployment.yaml up -d shopapp-spring-container --build
-#docker logs shopapp-spring-container
+#docker logs -f shopapp-spring-container
 
 #docker-compose -f ./deployment.yaml rm -s -f shopapp-angular-container
 #docker-compose -f ./deployment.yaml up -d shopapp-angular-container --build

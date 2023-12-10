@@ -20,6 +20,7 @@ RUN yarn build:production
 FROM nginx:alpine
 
 # Copy the built app from the builder stage
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=builder /app/dist/shopapp-angular /usr/share/nginx/html
 
 EXPOSE 80
