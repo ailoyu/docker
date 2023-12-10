@@ -15,6 +15,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
+import org.springframework.util.AntPathMatcher;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
@@ -89,12 +90,12 @@ public class JwtTokenFilter extends OncePerRequestFilter {
 
     }
 
-    private boolean isBypassToken(@NonNull HttpServletRequest request){
+    /*private boolean isBypassToken(@NonNull HttpServletRequest request){
         // Các danh sách API được pass ko cần sử dụng token
         final List<Pair<String, String>> bypassTokens = Arrays.asList(
                 // Healthcheck request, no JWT token required
                 Pair.of(String.format("%s/healthcheck/health", apiPrefix), "GET"),
-                Pair.of(String.format("%s/actuator/**", apiPrefix), "GET"),
+                Pair.of(String.format("%s/actuator/health", apiPrefix), "GET"),
 
                 // Swagger
                 Pair.of("/api-docs","GET"),
@@ -127,6 +128,52 @@ public class JwtTokenFilter extends OncePerRequestFilter {
             if(request.getServletPath().contains(bypassToken.getLeft()) &&
                     request.getMethod().equals(bypassToken.getRight())){
                 // Xác thực JWT và cho pass qua
+                return true;
+            }
+        }
+        return false;
+    }*/
+
+
+    private static final List<Pair<String, String>> BYPASS_TOKENS = Arrays.asList(
+            // Healthcheck request, no JWT token required
+            Pair.of("/healthcheck/health", "GET"),
+            Pair.of("/actuator/health", "GET"),
+
+            // Swagger
+            Pair.of("/api-docs", "GET"),
+            Pair.of("/api-docs/**", "GET"),
+            Pair.of("/swagger-resources", "GET"),
+            Pair.of("/swagger-resources/**", "GET"),
+            Pair.of("/configuration/ui", "GET"),
+            Pair.of("/configuration/security", "GET"),
+            Pair.of("/swagger-ui/**", "GET"),
+            Pair.of("/swagger-ui.html", "GET"),
+            Pair.of("/swagger-ui/index.html", "GET"),
+
+            // Other APIs
+            Pair.of("/products", "GET"),
+            Pair.of("/categories", "GET"),
+            Pair.of("/users/register", "POST"),
+            Pair.of("/users/login", "POST"),
+            Pair.of("/orders", "POST"),
+            Pair.of("/roles", "GET"),
+            Pair.of("/providers", "GET"),
+            Pair.of("/products/best-sellers", "GET"),
+            Pair.of("/products/products-from-category/**", "GET")
+    );
+
+    private boolean isBypassToken(@NonNull HttpServletRequest request) {
+        String servletPath = request.getServletPath();
+        String method = request.getMethod();
+
+        AntPathMatcher pathMatcher = new AntPathMatcher();
+        for (Pair<String, String> bypassToken : BYPASS_TOKENS) {
+            String pattern = bypassToken.getLeft();
+            String tokenMethod = bypassToken.getRight();
+
+            if (pathMatcher.match(pattern, servletPath) && method.equals(tokenMethod)) {
+                // JWT authentication is not required for this path/method combination
                 return true;
             }
         }
