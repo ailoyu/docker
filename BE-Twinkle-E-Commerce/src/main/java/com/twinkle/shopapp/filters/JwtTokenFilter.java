@@ -90,7 +90,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
 
     }
 
-    /*private boolean isBypassToken(@NonNull HttpServletRequest request){
+    private boolean isBypassToken(@NonNull HttpServletRequest request){
         // Các danh sách API được pass ko cần sử dụng token
         final List<Pair<String, String>> bypassTokens = Arrays.asList(
                 // Healthcheck request, no JWT token required
@@ -132,10 +132,10 @@ public class JwtTokenFilter extends OncePerRequestFilter {
             }
         }
         return false;
-    }*/
+    }
 
 
-    private static final List<Pair<String, String>> BYPASS_TOKENS = Arrays.asList(
+    /*private static final List<Pair<String, String>> BYPASS_TOKENS = Arrays.asList(
             // Healthcheck request, no JWT token required
             Pair.of("/healthcheck/health", "GET"),
             Pair.of("/actuator/health", "GET"),
@@ -178,7 +178,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
             }
         }
         return false;
-    }
+    }*/
 
 
 

@@ -50,9 +50,9 @@ api:
   prefix: api/v1
 
 jwt:
-  expiration: 2592000
+  expiration: 5184000
     #30 days = 30 * 24 * 60 * 60
-  secretKey: XsxIrJU5YktIqIJDJr7sYUrUYx+joroTKsMAwjqigm8=
+  secretKey: j5USbe0+UmjGDZBXvOINVVcFQZV2cZKvCHv18ZpR7sA=
 
 
 # swagger-ui custom path
