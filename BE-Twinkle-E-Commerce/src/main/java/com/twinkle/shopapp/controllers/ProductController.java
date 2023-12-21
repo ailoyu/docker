@@ -370,13 +370,13 @@ public class ProductController {
                 String[] recipients = {order.getEmail(), "quangtrinhhuynh02@gmail.com"};
 
                 EmailUtils.sendEmail(recipients, "Twinkle | Đơn hàng của bạn đã được đặt thành công và đang xử lý!", emailContent);
-//                response.sendRedirect("http://localhost:4200/order-detail");
-                response.sendRedirect("https://twinklee.netlify.app/order-detail");
+                response.sendRedirect("http://localhost:4301/order-detail");
+                // response.sendRedirect("https://twinklee.netlify.app/order-detail");
 
             } else {
                 // Giao dịch thất bại
                 // Thực hiện các xử lý cần thiết, ví dụ: không cập nhật CSDL\
-                response.sendRedirect("http://localhost:4200/order-detail");
+                response.sendRedirect("http://localhost:4301/order-detail");
             }
         }
     }

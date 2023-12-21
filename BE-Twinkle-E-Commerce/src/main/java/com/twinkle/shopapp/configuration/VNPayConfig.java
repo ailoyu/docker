@@ -21,7 +21,7 @@ public class VNPayConfig {
 
 //    public static String vnp_ReturnUrl = "http://localhost:8088/api/v1/products/payment-callback";
 
-    public static String vnp_ReturnUrl = "https://twinkleee-0f5f3ae8991e.herokuapp.com/api/v1/products/payment-callback";
+    public static String vnp_ReturnUrl = "http://localhost:8099/api/v1/products/payment-callback";
     public static String vnp_TmnCode = "N1Z7LUX5";
     public static String secretKey = "JYTLQLEMIVYKJAGNKFVAVICOIQFUTJVD";
     public static String vnp_ApiUrl = "https://sandbox.vnpayment.vn/merchant_webapi/api/transaction";
