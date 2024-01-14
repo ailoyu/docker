@@ -19,13 +19,9 @@ public class VNPayConfig {
 
     public static String vnp_PayUrl = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
 
-    public static String vnp_ReturnUrl = "http://localhost:8088/api/v1/products/payment-callback";
-
-<<<<<<< HEAD
-    // public static String vnp_ReturnUrl = "https://twinkleee-0f5f3ae8991e.herokuapp.com/api/v1/products/payment-callback";
-=======
     public static String vnp_ReturnUrl = "http://localhost:8099/api/v1/products/payment-callback";
->>>>>>> cc6516caf799784cd61fa8304a6b90feba235061
+
+    // public static String vnp_ReturnUrl = "https://twinkleee-0f5f3ae8991e.herokuapp.com/api/v1/products/payment-callback";
     public static String vnp_TmnCode = "N1Z7LUX5";
     public static String secretKey = "JYTLQLEMIVYKJAGNKFVAVICOIQFUTJVD";
     public static String vnp_ApiUrl = "https://sandbox.vnpayment.vn/merchant_webapi/api/transaction";
